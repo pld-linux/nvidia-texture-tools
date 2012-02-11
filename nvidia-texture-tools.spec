@@ -77,7 +77,7 @@ Plik nagłówkowy biblioteki NVIDIA Texture Tools.
 %patch0 -p1
 
 # use arch dependent libdir
-%{__sed} -i 's,lib/static,%{_lib}/static,' `grep lib/static -l -r * | grep CMakeLists.txt`
+%{__sed} -i 's,DESTINATION lib,DESTINATION %{_lib},' src/nv*/CMakeLists.txt
 
 %build
 %cmake \
