@@ -27,6 +27,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 #BuildRequires:	maya-devel ?
 BuildRequires:	qt4-build
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -75,6 +76,9 @@ Plik nagłówkowy biblioteki NVIDIA Texture Tools.
 %setup -q -n %{name}
 %patch0 -p1
 
+# use arch dependent libdir
+%{__sed} -i 's,lib/static,%{_lib}/static,' `grep lib/static -l -r * | grep CMakeLists.txt`
+
 %build
 %cmake \
 	-DCMAKE_BUILD_TYPE=Release \
@@ -107,10 +111,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/nvddsinfo
 %attr(755,root,root) %{_bindir}/nvimgdiff
 %attr(755,root,root) %{_bindir}/nvzoom
+%if 0
 %attr(755,root,root) %{_libdir}/libnvcore.so
 %attr(755,root,root) %{_libdir}/libnvmath.so
 %attr(755,root,root) %{_libdir}/libnvimage.so
 %attr(755,root,root) %{_libdir}/libnvtt.so
+%endif
 
 %files devel
 %defattr(644,root,root,755)
