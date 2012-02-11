@@ -6,7 +6,7 @@ Summary:	NVIDIA Texture Tools
 Summary(pl.UTF-8):	NVIDIA Texture Tools - narzędzia NVidii do tekstur
 Name:		nvidia-texture-tools
 Version:	2.0.8
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 #Source0Download: http://code.google.com/p/nvidia-texture-tools/downloads/list
