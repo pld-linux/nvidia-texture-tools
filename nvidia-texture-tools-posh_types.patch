@@ -40,3 +40,64 @@
  // Version string:
  #define NV_VERSION_STRING \
  	NV_OS_STRING "/" NV_CC_STRING "/" NV_CPU_STRING"/" \
+--- nvidia-texture-tools/src/nvcore/DefsGnucDarwin.h~	2010-05-14 19:59:28.000000000 +0200
++++ nvidia-texture-tools/src/nvcore/DefsGnucDarwin.h	2012-02-11 14:36:32.977068794 +0100
+@@ -2,7 +2,7 @@
+ #error "Do not include this file directly."
+ #endif
+ 
+-#include <stdint.h> // uint8_t, int8_t, ...
++//#include <stdint.h> // uint8_t, int8_t, ...
+ 
+ // Function linkage
+ #define DLL_IMPORT
+@@ -48,7 +48,7 @@
+ 
+ #define restrict    __restrict__
+ 
+-
++/*
+ // Type definitions
+ typedef uint8_t     uint8;
+ typedef int8_t      int8;
+@@ -64,3 +64,4 @@
+ 
+ // Aliases
+ typedef uint32      uint;
++*/
+--- nvidia-texture-tools/src/nvcore/DefsGnucWin32.h~	2010-05-14 19:59:28.000000000 +0200
++++ nvidia-texture-tools/src/nvcore/DefsGnucWin32.h	2012-02-11 14:37:26.864584734 +0100
+@@ -41,7 +41,7 @@
+ 
+ #define restrict	__restrict__
+ 
+-
++/*
+ // Type definitions
+ typedef unsigned char		uint8;
+ typedef signed char			int8;
+@@ -57,3 +57,4 @@
+ 
+ // Aliases
+ typedef uint32				uint;
++*/
+--- nvidia-texture-tools/src/nvcore/DefsVcWin32.h~	2010-05-14 19:59:28.000000000 +0200
++++ nvidia-texture-tools/src/nvcore/DefsVcWin32.h	2012-02-11 14:38:15.159097685 +0100
+@@ -39,7 +39,7 @@
+ #define __FUNC__ __FUNCTION__ 
+ #endif
+ 
+-
++/*
+ // Type definitions
+ typedef unsigned char       uint8;
+ typedef signed char         int8;
+@@ -55,7 +55,7 @@
+ 
+ // Aliases
+ typedef uint32              uint;
+-
++*/
+ 
+ // Unwanted VC++ warnings to disable.
+ /*
