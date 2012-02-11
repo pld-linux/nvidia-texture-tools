@@ -1,0 +1,42 @@
+--- nvidia-texture-tools/src/nvcore/DefsGnucLinux.h~	2010-05-14 19:59:28.000000000 +0200
++++ nvidia-texture-tools/src/nvcore/DefsGnucLinux.h	2012-02-11 14:25:10.170869965 +0100
+@@ -47,7 +47,7 @@
+ 
+ #define restrict    __restrict__
+ 
+-
++/*
+ // Type definitions
+ typedef unsigned char       uint8;
+ typedef signed char         int8;
+@@ -63,3 +63,4 @@
+ 
+ // Aliases
+ typedef uint32              uint;
++*/
+--- nvidia-texture-tools/src/nvcore/nvcore.h~	2010-05-14 19:59:28.000000000 +0200
++++ nvidia-texture-tools/src/nvcore/nvcore.h	2012-02-11 14:29:41.590451168 +0100
+@@ -99,6 +99,23 @@
+ #define NV_ENDIAN_STRING	POSH_ENDIAN_STRING
+ 
+ 
++// Type definitions:
++typedef posh_u8_t   uint8;
++typedef posh_i8_t   int8;
++
++typedef posh_u16_t  uint16;
++typedef posh_i16_t  int16;
++
++typedef posh_u32_t  uint32;
++typedef posh_i32_t  int32;
++
++typedef posh_u64_t  uint64;
++typedef posh_i64_t  int64;
++
++// Aliases
++typedef uint32      uint;
++
++
+ // Version string:
+ #define NV_VERSION_STRING \
+ 	NV_OS_STRING "/" NV_CC_STRING "/" NV_CPU_STRING"/" \

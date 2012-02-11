@@ -12,6 +12,7 @@ Group:		Libraries
 #Source0Download: http://code.google.com/p/nvidia-texture-tools/downloads/list
 Source0:	http://nvidia-texture-tools.googlecode.com/files/%{name}-%{version}-1.tar.gz
 # Source0-md5:	7449c95ca1583b512561c83c5a5f401c
+Patch0:		%{name}-posh_types.patch
 URL:		http://code.google.com/p/nvidia-texture-tools/
 BuildRequires:	OpenEXR-devel
 BuildRequires:	OpenGL-devel
@@ -72,6 +73,7 @@ Plik nagłówkowy biblioteki NVIDIA Texture Tools.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 %cmake \
